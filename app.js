@@ -2,6 +2,7 @@ const fs = require("fs");
 const fse = require("fs-extra");
 const http = require("http");
 
+
 let date = new Date();
 
 let content = "Date: " + date.getDate() +
@@ -25,5 +26,8 @@ const server = http.createServer((req, res) => {
     res.end();
 });
 
-server.listen(3000);
+const port = process.env.PORT || 3001;
+
+
+server.listen(port);
 
